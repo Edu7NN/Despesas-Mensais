@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora de Despesas</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>💰 Calculadora de Despesas Mensais</h1>
+
+            <div class="form-container">
+                <input type="text" id="descricao" placeholder="Descrição da despesa">
+                <input type="number" id="valor" placeholder="Valor R$">
+                <select id="categoria">
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="transporte">Transporte</option>
+                    <option value="moradia">Moradia</option>
+                    <option value="lazer">Lazer</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <button onclick="adicionarDespesa()">Adicionar</button>
+            </div>
+
+            <div class="filtros">
+                <button onclick="filtrarPorCategoria('alimentacao')">Alimentação</button>
+                <button onclick="filtrarPorCategoria('transporte')">Transporte</button>
+                <button onclick="filtrarPorCategoria('moradia')">Moradia</button>
+                <button onclick="filtrarPorCategoria('lazer')">Lazer</button>
+                <button onclick="filtrarPorCategoria('outros')">Outros</button>
+                <button onclick="mostrarTodas()">Todas</button>
+            </div>
+
+            <div class="resultados">
+                <h3>Despesas:</h3>
+                <ul id="lista-despesas"></ul>
+
+                <div class="estatisticas">
+                    <h3>Estatísticas:</h3>
+                    <p id="total-geral">Total Geral: R$ 0,00</p>
+                    <p id="total-categoria">Total por Categoria: -</p>
+                    <p id="media-gastos">Média de Gastos: R$ 0,00</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>

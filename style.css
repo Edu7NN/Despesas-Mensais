@@ -1,0 +1,266 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 15px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.8rem;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .form-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .form-container input, 
+            .form-container select {
+                flex: 1;
+            }
+            
+            .form-container button {
+                flex: 0 0 auto;
+            }
+        }
+
+        input, select, button {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .btn-excluir {
+            background: #e74c3c;
+            padding: 8px 12px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .btn-excluir:hover {
+            background: #c0392b;
+        }
+
+        .filtros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .filtros button {
+            background: #2ecc71;
+            flex: 1;
+            min-width: calc(50% - 10px);
+            padding: 10px;
+        }
+
+        .filtros button:hover {
+            background: #27ae60;
+        }
+
+        @media (min-width: 480px) {
+            .filtros button {
+                min-width: calc(33.333% - 10px);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .filtros button {
+                min-width: auto;
+                flex: 0 0 auto;
+            }
+        }
+
+        .resultados {
+            margin-top: 20px;
+        }
+
+        #lista-despesas {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        #lista-despesas li {
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f9f9f9;
+        }
+
+        @media (min-width: 600px) {
+            #lista-despesas li {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .expense-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        @media (min-width: 600px) {
+            .expense-info {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .expense-details {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .expense-details span {
+            margin-right: 10px;
+        }
+
+        .expense-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .estatisticas {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .estatisticas h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        .estatisticas p {
+            margin: 10px 0;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .categoria-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-transform: capitalize;
+        }
+
+        .alimentacao { background-color: #e74c3c; }
+        .transporte { background-color: #3498db; }
+        .moradia { background-color: #f39c12; }
+        .lazer { background-color: #9b59b6; }
+        .outros { background-color: #7f8c8d; }
+
+        .empty-state {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        /* Melhorias para mobile */
+        .mobile-warning {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+                border-radius: 8px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            input, select, button {
+                padding: 14px;
+            }
+            
+            .mobile-warning {
+                display: block;
+                text-align: center;
+                font-size: 0.9rem;
+                color: #7f8c8d;
+                margin-top: 10px;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #lista-despesas li {
+            animation: fadeIn 0.3s ease-out;
+        }
